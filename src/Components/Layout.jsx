@@ -1,5 +1,6 @@
 import * as React from 'react';
 import Navbar from './Navbar';
+import Header from './Header';
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 
@@ -22,6 +23,10 @@ const Layout = () => {
 		<div className='container'>
 			<ThemeProvider theme={theme}>
 				<Navbar />
+
+				<div className='header__container'>
+					<Header />
+				</div>
 			</ThemeProvider>
 		</div>
 	);

@@ -25,17 +25,21 @@ export const navLinks = [
 		isExpandable: true,
 	},
 ];
-export const managePropLinks = [
+export const Countries = [
 	{
-		label: 'Option 1',
-		link: '',
+		value: 'India',
+		label: 'India',
 	},
 	{
-		label: 'Option 2',
-		link: '',
+		value: 'USA',
+		label: 'USA',
 	},
 	{
-		label: 'Option 3',
-		link: '',
+		value: 'United Kingdom',
+		label: 'United Kingdom',
+	},
+	{
+		value: 'France',
+		label: 'France',
 	},
 ];
