@@ -1,11 +1,15 @@
-import { Box, Divider, Fade, Paper, Popper, Slider } from '@mui/material';
+import { Button, Divider, Fade, Paper, Popper, Slider } from '@mui/material';
 import * as React from 'react';
-import { Countries } from '../../utils/constants';
+import { Countries, PropertyTypes } from '../../utils/constants';
 import { CustomSelect } from './CustomSelect';
 import TextField from '@mui/material/TextField';
 import { AdapterDayjs } from '@mui/x-date-pickers/AdapterDayjs';
 import { LocalizationProvider } from '@mui/x-date-pickers/LocalizationProvider';
 import { DatePicker } from '@mui/x-date-pickers/DatePicker';
+
+function valuetext(value) {
+	return `${value}°C`;
+}
 
 const Filters = ({
 	styles,
@@ -15,29 +19,34 @@ const Filters = ({
 	setDate,
 	price,
 	setPrice,
+	property,
+	setProperty,
+	applyFilters,
 }) => {
-	console.log(country);
-	const [open, setOpen] = React.useState(false);
 	const [anchorEl, setAnchorEl] = React.useState(null);
 
 	const handleClick = (event) => {
-		setAnchorEl(event.currentTarget);
-		setOpen((previousOpen) => !previousOpen);
+		setAnchorEl(anchorEl ? null : event.currentTarget);
 	};
 
-	const canBeOpen = open && Boolean(anchorEl);
-	const id = canBeOpen ? 'transition-popper' : undefined;
+	const open = Boolean(anchorEl);
+	const id = open ? 'simple-popper' : undefined;
+
+	const handleChange = (event, newValue) => {
+		setPrice(newValue);
+	};
 
 	return (
-		<div className={styles.filterContainer}>
+		<Paper elavation={2} className={styles.filterContainer}>
 			<div className={styles.filterSection}>
-				<div className={styles.filterLabel}>Locatiosn</div>
+				<div className={styles.filterLabel}>Location</div>
 				<CustomSelect
 					options={Countries}
 					value={country}
 					onChange={(e) => {
-						setCountry(e ? e.value : undefined);
+						setCountry(e);
 					}}
+					defaultValue={Countries[0]}
 				/>
 			</div>
 			<Divider orientation='vertical' flexItem />
@@ -65,8 +74,13 @@ const Filters = ({
 			<div className={styles.filterSection}>
 				<div className={styles.filterLabel}>Price</div>
 				<div className={styles.filterValue}>
-					<button aria-describedby={id} type='button' onClick={handleClick}>
-						Toggle Popper
+					<button
+						className={styles.pricePopperBtn}
+						aria-describedby={id}
+						type='button'
+						onClick={handleClick}
+					>
+						{`${price[0]}$-${price[1]}$`}
 					</button>
 					<Popper
 						id={id}
@@ -79,11 +93,11 @@ const Filters = ({
 							<Fade {...TransitionProps} timeout={350}>
 								<Paper className={styles.pricePopper} elevation={2}>
 									<Slider
-										getAriaLabel={() => 'Price range'}
+										getAriaLabel={() => 'Temperature range'}
 										value={price}
-										onChange={(e, newValue) => setPrice(newValue)}
+										onChange={handleChange}
 										valueLabelDisplay='auto'
-										getAriaValueText={`${price}`}
+										getAriaValueText={valuetext}
 									/>
 								</Paper>
 							</Fade>
@@ -94,13 +108,22 @@ const Filters = ({
 			<Divider orientation='vertical' flexItem />
 			<div className={styles.filterSection}>
 				<div className={styles.filterLabel}>Property Type</div>
-				<div className={styles.filterValue}>Houses</div>
+				<CustomSelect
+					options={PropertyTypes}
+					value={property}
+					onChange={(e) => {
+						setProperty(e);
+					}}
+					defaultValue={PropertyTypes[0]}
+				/>
 			</div>
 			<Divider orientation='vertical' flexItem />
 			<div className={styles.filterSection}>
-				<button>Search</button>
+				<Button color='primary' variant='contained' onClick={applyFilters}>
+					Search
+				</Button>
 			</div>
-		</div>
+		</Paper>
 	);
 };
 

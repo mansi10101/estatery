@@ -27,6 +27,10 @@ export const navLinks = [
 ];
 export const Countries = [
 	{
+		value: 'All',
+		label: 'All',
+	},
+	{
 		value: 'India',
 		label: 'India',
 	},
@@ -41,5 +45,24 @@ export const Countries = [
 	{
 		value: 'France',
 		label: 'France',
+	},
+];
+
+export const PropertyTypes = [
+	{
+		value: 'All',
+		label: 'All',
+	},
+	{
+		value: 'House',
+		label: 'House',
+	},
+	{
+		value: 'Flat',
+		label: 'Flat',
+	},
+	{
+		value: 'Villa',
+		label: 'Villa',
 	},
 ];

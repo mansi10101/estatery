@@ -1,7 +1,7 @@
 import * as React from 'react';
 import Select from 'react-select';
 
-const CustomSelect = ({ options, value, onChange }) => {
+const CustomSelect = ({ options, value, onChange, defaultValue }) => {
 	const style = {
 		control: (styles) => ({
 			...styles,
@@ -37,6 +37,7 @@ const CustomSelect = ({ options, value, onChange }) => {
 				options={options}
 				styles={style}
 				onChange={onChange}
+				defaultValue={defaultValue}
 			/>
 		</>
 	);
