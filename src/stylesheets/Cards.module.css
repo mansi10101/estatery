@@ -1,0 +1,92 @@
+.container {
+    justify-content: space-around;
+    padding: 0rem 6rem;
+    row-gap: 1rem;
+    position: relative;
+}
+
+.card {
+    position: relative;
+    /* padding: 1rem; */
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.cardIsPopular {
+    position: absolute;
+    background: #6f65e8;
+    color: #fff;
+    padding: 0.3rem 0.8rem;
+    left: -8px;
+    font-size: 0.8rem;
+    transform: translateY(-50%);
+    border-radius: 10px 10px 10px 0px;
+}
+
+.cardImage {
+    width: 100%;
+    min-width: 350px;
+    min-height: 250px;
+    border-radius: 4px;
+    background-size: cover;
+}
+
+.cardDetails {
+    display: flex;
+    justify-content: space-between;
+}
+
+.priceName {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.price {
+    color: #6f65e8;
+    font-weight: 700;
+    font-size: 1.8rem;
+}
+
+.fav {
+    height: fit-content;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0.5rem;
+    border: 1px solid #6f65e8;
+    border-radius: 50%;
+    cursor: pointer;
+}
+
+.fav:active {
+    transform: scale(1.1);
+}
+
+.price span {
+    color: #bdbdbd;
+    font-size: 1rem;
+}
+
+.name {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.address {
+    text-align: left;
+    color: #bdbdbd;
+    margin-bottom: 1rem;
+}
+
+.stats {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 1rem;
+}
+
+.statDiv {
+    display: flex;
+    column-gap: 0.2rem;
+    color: #bdbdbd;
+}

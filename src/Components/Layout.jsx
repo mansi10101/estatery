@@ -1,6 +1,7 @@
 import * as React from 'react';
 import Navbar from './Navbar';
 import Header from './Header';
+import CardWrapper from './Cards'
 import { createTheme, ThemeProvider } from '@mui/material/styles'
 
 
@@ -27,8 +28,12 @@ const Layout = () => {
 				<div className='header__container'>
 					<Header />
 				</div>
+				<div className='content__container'>
+					<CardWrapper />
+				</div>
 			</ThemeProvider>
 		</div>
+		
 	);
 };
 
