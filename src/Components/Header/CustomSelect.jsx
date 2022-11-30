@@ -1,17 +1,18 @@
 import * as React from 'react';
 import Select from 'react-select';
 
-const CustomSelect = ({ options, value, onChange, defaultValue }) => {
+const CustomSelect = ({ options, contained, onChange, defaultValue }) => {
 	const style = {
 		control: (styles) => ({
 			...styles,
-			backgroundColor: 'transparent',
+			backgroundColor: contained ? '#fff' : 'transparent',
 			color: '#484554',
-			border: 'none',
+			border: contained ? '1px solid #C9C9C9' : 'none',
 			outline: 'none',
 			fontSize: '1rem',
 			fontWeight: 700,
 			width: '100%',
+			minWidth: '200px',
 		}),
 		option: (styles, { data, isDisabled, isFocused, isSelected }) => {
 			return {
@@ -32,7 +33,7 @@ const CustomSelect = ({ options, value, onChange, defaultValue }) => {
 	return (
 		<>
 			<Select
-				isClearable={true}
+				// isClearable={true}
 				isSearchable={true}
 				options={options}
 				styles={style}

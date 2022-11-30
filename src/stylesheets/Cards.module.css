@@ -1,8 +1,33 @@
 .container {
-    justify-content: space-around;
+    justify-content: center;
     padding: 0rem 6rem;
-    row-gap: 1rem;
+    row-gap: 2rem;
+    column-gap: 2rem;
     position: relative;
+    padding-bottom: 2rem;
+    height: fit-content;
+}
+
+.noContentContainer {
+    color: #363636;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.noContent {
+    width: 45vw;
+    height: 50vh;
+    filter: blur(3px);
+    position: relative;
+}
+
+.noContentCaption {
+    position: absolute;
+    align-self: center;
+    top: 50%;
+    transform: translateY(-50%);
+    padding: 1rem 2rem;
 }
 
 .card {

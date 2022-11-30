@@ -1,37 +1,22 @@
 import * as React from 'react';
-import SearchIcon from '@mui/icons-material/Search';
-import { IconButton, TextField } from '@mui/material';
+import { CustomSelect } from './CustomSelect';
+import { QuickSearch } from '../../utils/constants';
 
-const TitleBar = ({ styles, keyword, setKeyword }) => {
+const TitleBar = ({ styles, quickSearch, setQuickSearch }) => {
 	return (
 		<div className={styles.titleContainer}>
-			<div container className={styles.title}>
-				Search properties to rent
-			</div>
+			<div className={styles.title}>Search properties to rent</div>
 
-			<div container className={styles.searchContainer}>
-				<TextField
-					onKeyPress={(e) => {
-						if (e.key === 'Enter') {
-							console.log(keyword);
-						}
+			<div className={styles.searchContainer}>
+				<CustomSelect
+					options={QuickSearch}
+					value={quickSearch}
+					onChange={(e) => {
+						setQuickSearch(e);
 					}}
-					sx={{ ml: 1, flex: 1, background: '#fff' }}
-					placeholder='Search by keyword...'
-					onChange={(e) => setKeyword(e.target.value)}
-					value={keyword}
-					size='small'
-					className={styles.searchBar}
-					// variant='filled'
+					defaultValue={QuickSearch[0]}
+					contained={true}
 				/>
-				<IconButton
-					type='button'
-					sx={{ p: '10px' }}
-					aria-label='search'
-					onClick={() => console.log(keyword)}
-				>
-					<SearchIcon />
-				</IconButton>
 			</div>
 		</div>
 	);

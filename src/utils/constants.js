@@ -1,3 +1,4 @@
+// NAVBAR
 export const navLinks = [
 	{
 		label: 'Rent',
@@ -66,6 +67,18 @@ export const PropertyTypes = [
 		label: 'Villa',
 	},
 ];
+
+export const QuickSearch = [
+	{
+		value: 'All',
+		label: 'All',
+	},
+	{
+		value: 'Popular',
+		label: 'Popular',
+	},
+];
+
 export const Properties = [
 	//id and name of a property must be unique
 	{
@@ -76,11 +89,13 @@ export const Properties = [
 			'https://images.unsplash.com/photo-1572120360610-d971b9d7767c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8OHx8cmVhbCUyMGVzdGF0ZSUyMHNpbmdsZSUyMGhvdXNlJTIwZXh0ZXJpb3J8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60',
 		isPopular: true,
 		isFav: true,
-		address: '2699 Green Valley, Highland Lake, FL',
+		address: '2699 Green Valley, Highland Lake, India',
 		cost: 2095,
 		noOfBeds: 3,
 		noOfBathrooms: 2,
 		dimensions: '5x7m',
+		country: 'India',
+		availableFrom: '12/4/22',
 	},
 	{
 		id: 2,
@@ -90,11 +105,13 @@ export const Properties = [
 			'https://images.unsplash.com/photo-1625119009794-a889929e07fb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MTR8fG1vdGVsfGVufDB8fDB8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
 		isPopular: true,
 		isFav: false,
-		address: '2821 Lake Sevilla, Palm Harbor, TX',
+		address: '2821 Lake Sevilla, Palm Harbor, UK',
 		cost: 2700,
 		noOfBeds: 4,
 		noOfBathrooms: 2,
 		dimensions: '6x7.5m',
+		country: 'United Kingdom',
+		availableFrom: '12/10/22',
 	},
 	{
 		id: 3,
@@ -104,11 +121,13 @@ export const Properties = [
 			'https://images.unsplash.com/photo-1527788065631-346a8345936e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Nnx8bW90ZWx8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60',
 		isPopular: false,
 		isFav: true,
-		address: '909 Woodland St, Michigan, IN',
+		address: '909 Woodland St, USA',
 		cost: 4550,
 		noOfBeds: 4,
 		noOfBathrooms: 3,
 		dimensions: '8x10m',
+		country: 'USA',
+		availableFrom: '12/1/22',
 	},
 	{
 		id: 4,
@@ -118,11 +137,13 @@ export const Properties = [
 			'https://images.unsplash.com/photo-1588880331179-bc9b93a8cb5e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDJ8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
 		isPopular: false,
 		isFav: false,
-		address: '2699 Victory House, London, EN',
+		address: '2699 Victory House, USA',
 		cost: 650,
 		noOfBeds: 4,
 		noOfBathrooms: 4,
 		dimensions: '6x7.5m',
+		country: 'USA',
+		availableFrom: '12/20/22',
 	},
 	{
 		id: 5,
@@ -132,11 +153,13 @@ export const Properties = [
 			'https://images.unsplash.com/photo-1580587771525-78b9dba3b914?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8cmVhbCUyMGVzdGF0ZSUyMHNpbmdsZSUyMGhvdXNlJTIwZXh0ZXJpb3J8ZW58MHx8MHx8&auto=format&fit=crop&w=600&q=60',
 		isPopular: false,
 		isFav: true,
-		address: "1696 St.Jhon's Wood, NW8, London, EN",
+		address: "1696 St.Jhon's Wood, India",
 		cost: 500,
 		noOfBeds: 4,
 		noOfBathrooms: 2,
 		dimensions: '6x7.5m',
+		country: 'India',
+		availableFrom: '1/3/23',
 	},
 	{
 		id: 6,
@@ -146,11 +169,13 @@ export const Properties = [
 			'https://images.unsplash.com/photo-1576941089067-2de3c901e126?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDh8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
 		isPopular: true,
 		isFav: false,
-		address: 'Chelsea SW3, London, EN, United Kingdom',
+		address: 'Chelsea SW3, London, India',
 		cost: 4999,
 		noOfBeds: 4,
 		noOfBathrooms: 2,
 		dimensions: '6x7.5m',
+		country: 'India',
+		availableFrom: '1/10/23',
 	},
 	{
 		id: 7,
@@ -160,11 +185,13 @@ export const Properties = [
 			'https://images.unsplash.com/photo-1582268611958-ebfd161ef9cf?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDF8fHxlbnwwfHx8fA%3D%3D&auto=format&fit=crop&w=600&q=60',
 		isPopular: false,
 		isFav: false,
-		address: 'Roehampton SW15, London, EN',
+		address: 'Roehampton SW15, France',
 		cost: 7550,
 		noOfBeds: 4,
 		noOfBathrooms: 2,
 		dimensions: '6x7.5m',
+		country: 'France',
+		availableFrom: '12/15/22',
 	},
 	{
 		id: 8,
@@ -174,10 +201,12 @@ export const Properties = [
 			'https://images.unsplash.com/photo-1515898913320-f38370edab7a?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1yZWxhdGVkfDEyfHx8ZW58MHx8fHw%3D&auto=format&fit=crop&w=600&q=60',
 		isPopular: false,
 		isFav: true,
-		address: 'Mayfair W1J, London, EN, United Kingdom',
+		address: 'Mayfair W1J, London, France',
 		cost: 2500,
 		noOfBeds: 4,
 		noOfBathrooms: 2,
 		dimensions: '6x7.5m',
+		country: 'France',
+		availableFrom: '12/26/22',
 	},
 ];

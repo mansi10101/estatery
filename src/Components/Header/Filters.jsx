@@ -19,8 +19,8 @@ const Filters = ({
 	setDate,
 	price,
 	setPrice,
-	property,
-	setProperty,
+	propertyType,
+	setPropertyType,
 	applyFilters,
 }) => {
 	const [anchorEl, setAnchorEl] = React.useState(null);
@@ -37,7 +37,7 @@ const Filters = ({
 	};
 
 	return (
-		<Paper elavation={2} className={styles.filterContainer}>
+		<Paper elevation={2} className={styles.filterContainer}>
 			<div className={styles.filterSection}>
 				<div className={styles.filterLabel}>Location</div>
 				<CustomSelect
@@ -96,6 +96,9 @@ const Filters = ({
 										getAriaLabel={() => 'Temperature range'}
 										value={price}
 										onChange={handleChange}
+										min={0}
+										max={10000}
+										step={500}
 										valueLabelDisplay='auto'
 										getAriaValueText={valuetext}
 									/>
@@ -110,9 +113,9 @@ const Filters = ({
 				<div className={styles.filterLabel}>Property Type</div>
 				<CustomSelect
 					options={PropertyTypes}
-					value={property}
+					value={propertyType}
 					onChange={(e) => {
-						setProperty(e);
+						setPropertyType(e);
 					}}
 					defaultValue={PropertyTypes[0]}
 				/>

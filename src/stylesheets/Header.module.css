@@ -10,6 +10,10 @@
     color: #484554;
 }
 
+.searchContainer {
+    text-align: left;
+}
+
 .filterContainer {
     margin: 2rem 0rem;
     display: flex;
